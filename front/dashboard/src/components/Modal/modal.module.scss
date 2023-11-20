@@ -1,0 +1,37 @@
+.container{
+    height: 100vh;
+    width: 100%;
+    background-color: #00000056;
+    position: absolute ;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+
+
+    .modalContainer{
+        background-color: #ffff;
+        width: 50%;
+        border-radius: 10px;
+
+        .modalHeader{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2%;
+            border-bottom: solid 1px #979797;
+        
+        }
+        .modalBody{
+            padding: 5%;
+          
+        }
+       
+        .modalClose{
+            font-weight: 600;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+    }
+}

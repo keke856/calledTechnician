@@ -1,0 +1,257 @@
+
+
+
+.menuTop{
+    display: flex;
+   justify-content: space-between;
+   align-items: center;
+   max-width: 1200px;
+    margin: 2% auto;
+
+    button{
+        background-color: #04BF45;
+        color: #fff;
+        border: 0 none;
+        padding: 10px 10px;
+        border-radius: 10px;
+        font-size: 12px;
+    }
+
+    .filter{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        input[type=date]{
+          padding: 5px;
+          border-radius: 5px;
+          background-color: #f7f7f7;
+          width: 50%;
+        }
+
+        .filterSearch{
+           display: flex;
+           border:solid 1px #646464;
+           border-radius: 10px;
+           padding: 5px;
+           width: 100%;
+           svg{
+             position: relative;
+             background-color: #FFF;
+             left: 93%;
+           }
+          input[type=search]{
+              border-color: transparent ;
+              width: 100%;
+             
+
+          }
+
+          input[type=search]:focus{
+            box-shadow: 0 0 0 0;
+            outline: 0;
+          }
+       
+        }
+
+        label{
+            font-size: 0.7rem;
+            width: 50%;
+        }
+    }
+    
+    .search{
+        display: flex;
+        input{
+            height: 30px;
+         }
+
+         button{
+            padding: 0;
+            height: 30px;
+            border-radius: 0;
+            padding: 0 2% 0 2%;
+            background-color: #000;
+         }
+    }
+
+    @media(max-width: 760px){
+
+        flex-direction: column;
+    
+
+        button{
+            width: 90%;
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+      
+   }
+}
+
+.calledList{
+        
+    margin-top: 2%;
+
+    .viewCalled{
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+    .info__company{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .called{
+     
+       max-width: 750px;
+       background-color: #e4e4e4;
+       margin: 0 auto;
+       padding: 3%;
+       border-radius: 20px;
+       -webkit-box-shadow: 2px 1px 10px -1px #cfcdcd; 
+       box-shadow: 2px 1px 10px -1px #979797;
+
+       .called__company{
+           h2{
+             font-size: 1.1rem;
+             padding-bottom: 10px;
+           }
+           p{
+            font-size: 1rem;
+            padding-bottom: 7px;
+           }
+          
+       }
+
+       .called__info{
+        display: flex;
+        gap: 20px;
+          span{
+             font-size: 0.9rem;
+          }
+       }
+    }
+
+    @media(max-width: 760px){
+         .called{
+            width: 90%;
+            margin-top: 20px;
+         }
+    }
+  
+}
+
+
+
+.tableCalleds{
+    width: 80%;
+    margin: 0 auto;
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+}
+
+
+
+.form{ 
+    button{
+        margin-top: 1%;
+        padding: 1%;
+        width: 100%;
+        background-color: #04BF45;
+        color: #fff;
+        border: 0 none;
+    }
+
+    .formControl{
+     margin-top: 10px;
+        textarea{
+        width: 100%;
+        height: 200px;
+      
+        }
+
+        select{
+            width: 100%;
+            padding: 1%;
+        }
+
+   }
+}
+
+.ModalCalled{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+
+    .ModalCalled__description{
+        margin-top: 20px;
+
+        .ModalCalled__description__data{
+          margin-top: 10px;   
+        }
+    }
+}
+
+.loading{
+    height: 100vh;
+    width: 100%;
+    background-color: #000000c2;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .loadingComponent{
+        z-index: 99999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        p{
+            margin-top: 40px;
+            text-align: center;
+            color: #fff;
+        }
+
+        
+    }
+}
+
+.paginateContainer{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    .paginate{
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: 5% 0 5% 0;
+
+        li{
+            cursor: pointer;
+            padding: 3px;
+            
+        }
+
+        .itemActive{
+            background-color: #000;
+            color: #fff;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300&family=Poppins:wght@200;300;400;500;600;800&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+p,label,button,span,li,a,h1,h2,h3,h4,h5,h6{
+  font-family: 'Montserrat', sans-serif;
+}
