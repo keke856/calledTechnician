@@ -1,7 +1,8 @@
 
 import Modal from "../../../components/Modal/Modal";
 import Style from "./header.module.scss";
-import userImg from "./user.png"
+import userImg from "./user.png";
+import logo from "./logo.svg";
 import {Link,useNavigate} from "react-router-dom";
 
 export default function header(){
@@ -22,7 +23,7 @@ export default function header(){
         <div className={Style.container}>
 
              <div>
-                <h2>Logo do cliente</h2>
+                  <img src={logo} alt="logo" />
                 </div>
 
               

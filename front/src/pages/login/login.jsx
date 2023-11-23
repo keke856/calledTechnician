@@ -34,7 +34,7 @@ export default function Login(){
      
        axios({
         method: 'POST',
-        url: 'http://localhost:9090/api/login',
+        url: 'http://192.168.0.118:9090/api/login',
         data: {
           email: email,
           password: password

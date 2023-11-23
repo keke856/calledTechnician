@@ -79,7 +79,7 @@ export default function Dashboard(){
        
          axios({
             method: 'POST',
-            url: 'http://localhost:9090/api/registerCalled',
+            url: 'http://192.168.0.118:9090/api/registerCalled',
             data: {
                 type: typeCalled,
                 description: typeDescription
@@ -115,7 +115,7 @@ export default function Dashboard(){
 
 
               <div className={Style.menuTop}>
-                     <button onClick={()=>setOpeModalCalled(true)}> Novo Chamado</button>
+                     <button className={Style.newCalled} onClick={()=>setOpeModalCalled(true)}> Novo Chamado</button>
                      
                    <div className={Style.filter}>
                        
