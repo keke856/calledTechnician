@@ -15,14 +15,7 @@
         padding: 10px 10px;
         border-radius: 10px;
         font-size: 12px;
-       // border-radius: 50%;
-        // position: fixed;
-        // bottom: 10px;
-        // left: 5px;
-        // width: 80px !important;
-        // height: 80px;
-        // z-index: 10;
-     
+ 
     }
 
     .filter{
@@ -46,7 +39,7 @@
            svg{
              position: relative;
              background-color: #FFF;
-             left: 93%;
+             left: 90%;
            }
           input[type=search]{
               border-color: transparent ;
@@ -143,7 +136,9 @@
         display: flex;
         gap: 20px;
           span{
-             font-size: 0.9rem;
+            display: flex;
+            flex-direction: column;
+             font-size: 0.6rem;
           }
        }
     }
@@ -152,9 +147,34 @@
          .called{
             width: 90%;
             margin-top: 20px;
+        
+
+            .called__company {
+            
+                p{
+                    font-size: 0.8rem;
+                }
+
+                h2{
+                    font-size: 1rem ;
+                  }
+            }
          }
+
+
+         .called__info{
+       
+              span{
+                display: flex;
+                flex-direction: column;
+                 font-size: 0.6rem;
+              }
+            }
+
+         .called__company p{
+            font-size: 0.7rem;
+        }
     }
-  
 }
 
 
@@ -246,8 +266,7 @@
 }
 
 .paginateContainer{
-    margin-top: 10%;
-    margin-bottom: 20%;
+    
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -270,4 +289,29 @@
             color: #fff;
         }
     }
+
+
+    @media(max-width: 760px) {
+        margin-top: 10%;
+        margin-bottom: 20%;
+    }
+}
+
+  .passwordUser{
+    .form{
+        display: flex;
+        flex-direction: column;
+
+     
+
+        button{
+            margin-top: 1%;
+            padding: 1%;
+            width: 100%;
+            background-color: #04BF45;
+            color: #fff;
+            border: 0 none;
+        }
+    }
+    background-color: #04BF45 ;
 }

@@ -4,8 +4,18 @@ import Style from "./header.module.scss";
 import userImg from "./user.png";
 import logo from "./logo.svg";
 import {Link,useNavigate} from "react-router-dom";
+import { useState } from "react";
 
-export default function header(){
+export default function header({setOpenModalUser}){
+
+    const [dropdown,setDropdown] = useState(false);
+
+    function dropdownActive(){
+        setDropdown(!dropdown);
+    }
+
+
+    
     const navigate = useNavigate();
 
 
@@ -14,7 +24,7 @@ export default function header(){
         navigate("/login"); 
     }
 
-
+   
 
     return(
        <> 
@@ -23,18 +33,19 @@ export default function header(){
         <div className={Style.container}>
 
              <div>
-                  <img src={logo} alt="logo" />
+                logo
+                  {/* <img src={logo} alt="logo" /> */}
                 </div>
 
               
                               
                 <div className={Style.user}>
-                    <div>
+                    <div onClick={()=>dropdownActive()}>
                         <img src={userImg} />
                     </div>
 
-                    <ul>
-                        <li>Alterar dados</li>
+                    <ul className={`${dropdown ? "" : Style.hidden} ${Style.dropdownUser}`}>
+                        <li onClick={()=>setOpenModalUser(true)}>Alterar dados</li>
                         <li onClick={()=>logout()}>Logout</li>
                     </ul>
                 </div>

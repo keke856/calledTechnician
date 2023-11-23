@@ -1,6 +1,7 @@
 header{
-    background-color: rgb(2, 2, 2);
+    background-color: #0e0e0e;
 
+   
 .container{
     display: flex;
     justify-content: space-between;
@@ -23,12 +24,12 @@ header{
        }
 
        ul{
-        display: none;
+      
         z-index: 10;
          position: absolute;
          top: 80px;
-         background-color: rgb(238, 238, 238);
-         color: #000;
+         background-color: #0e0e0e;
+         color: #ffffff;
          padding: 10px;
          list-style: none;
          border-radius: 10px;
@@ -45,9 +46,10 @@ header{
          }
        }
   
-       &:hover  ul{
-         display: block;
-       }
+       .hidden{
+          display: none ;
+         }
+
    }
 
 

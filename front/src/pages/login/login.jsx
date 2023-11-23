@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import Style from "./style.module.scss";
 import { useEffect, useState } from "react";
-import axios from 'axios';
+
 import { useNavigate } from "react-router-dom";
 import SyncLoader from "react-spinners/SyncLoader";
+import axios from 'axios';
+import api from "../../api/api";
 
 
 
@@ -31,15 +33,26 @@ export default function Login(){
        e.preventDefault();
 
        setStartLoadin(true);
-     
-       axios({
-        method: 'POST',
-        url: 'http://192.168.0.118:9090/api/login',
-        data: {
+
+
+
+
+      console.log(api);
+
+
+
+       api.post(
+        'api/login',
+         {
           email: email,
           password: password
+        },
+        {
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          }
         }
-      })
+      )
         .then(function (response) {
             console.log(response['data']['access_token'])
           
