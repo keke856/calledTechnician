@@ -33,9 +33,9 @@ export default function Dashboard() {
       .then(function (response) {
         console.log(response);
 
-        setListCalled({ ...listCalled, data: response.data.data, paginate: response.data.links, lastPage: response.data.last_page_url, firstPage: response.data.first_page_url });
-
-        if (response.data) {
+         setListCalled({ ...listCalled, data: response.data.data, paginate: response.data.links, lastPage: response.data.last_page_url, firstPage: response.data.first_page_url });
+        
+         if (response.data) {
           setLoadin(false);
         }
       })
@@ -120,41 +120,47 @@ export default function Dashboard() {
 
 
       {
+        
+        
+        
+          listCalled.data && (
+            listCalled.data.length > 0 ?
+            listCalled.data.map((item, key) => (
 
-        listCalled.data && (
-          listCalled.data.map((item, key) => (
+              <div key={key} className={Style.calledList}>
 
-            <div key={key} className={Style.calledList}>
+                <div className={Style.called}>
+                  <div className={Style.info__company}>
+                    <div className={Style.called__company}>
+                      <h2>#{item.idCalled}</h2>
+                      <p><strong>Tipo de chamado:</strong> {item.type}</p>
+                    </div>
 
-              <div className={Style.called}>
-                <div className={Style.info__company}>
-                  <div className={Style.called__company}>
-                    <h2>#{item.idCalled}</h2>
-                    <p><strong>Tipo de chamado:</strong> {item.type}</p>
+                    <div className={Style.viewCalled} onClick={() => detailsCalled([{ "idCalled": item.idCalled, "type": item.type, "status": item.status, "description": item.description, "create": item.create, "createTime": item.createTime }])}>
+                      <GrView />
+                    </div>
+                  </div>
+                  <div className={Style.called__info}>
+                    <span><strong> Status: </strong>{item.status} </span>  <span> <strong>Data de abertura: </strong> {item.create} {item.createTime}</span> <span><strong> Data de Encerramento: </strong>  02/11/2023 22:00:56 </span>
                   </div>
 
-                  <div className={Style.viewCalled} onClick={() => detailsCalled([{ "idCalled": item.idCalled, "type": item.type, "status": item.status, "description": item.description, "create": item.create, "createTime": item.createTime }])}>
-                    <GrView />
-                  </div>
-                </div>
-                <div className={Style.called__info}>
-                  <span><strong> Status: </strong>{item.status} </span>  <span> <strong>Data de abertura: </strong> {item.create} {item.createTime}</span> <span><strong> Data de Encerramento: </strong>  02/11/2023 </span>
                 </div>
 
               </div>
-
-            </div>
-          ))
-
-
+            ))
+            :
+            <h1>Não há chamados!</h1>
         )
+
+       
       }
 
 
 
       {
         listCalled.paginate && (
-
+        listCalled.paginate.length <= 3 ? "":
+      
           <div className={Style.paginateContainer}>
             <ul className={Style.paginate}>
 

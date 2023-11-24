@@ -126,10 +126,11 @@
              padding-bottom: 10px;
            }
            p{
-            font-size: 1rem;
+            font-size: 1.2rem;
             padding-bottom: 7px;
            }
-          
+
+  
        }
 
        .called__info{
@@ -137,8 +138,9 @@
         gap: 20px;
           span{
             display: flex;
-            flex-direction: column;
-             font-size: 0.6rem;
+            flex-direction: row;
+            gap: 3px;
+             font-size: 0.8rem;
           }
        }
     }

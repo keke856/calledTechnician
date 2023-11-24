@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CalledController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TesteController;
@@ -27,6 +28,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::middleware('auth:sanctum')->post("/registerCalled",[CalledController::class,"store"]);
 Route::middleware('auth:sanctum')->get("/lisCalled",[CalledController::class,"index"]);
 Route::middleware('auth:sanctum')->get("/search",[CalledController::class,"search"]);
+Route::middleware('auth:sanctum')->post("/userUpdate",[UserController::class,"update"]);
+Route::middleware('auth:sanctum')->get("/userData",[UserController::class,"index"]);
+
 
 
 

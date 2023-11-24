@@ -45,7 +45,7 @@ export default function header({setOpenModalUser}){
                     </div>
 
                     <ul className={`${dropdown ? "" : Style.hidden} ${Style.dropdownUser}`}>
-                        <li onClick={()=>setOpenModalUser(true)}>Alterar dados</li>
+                        <li onClick={()=>setOpenModalUser(true)}>  <Link to="/userClient"> Alterar dados</Link></li>
                         <li onClick={()=>logout()}>Logout</li>
                     </ul>
                 </div>
