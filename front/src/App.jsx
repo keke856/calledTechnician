@@ -12,7 +12,10 @@ import {
 } from "react-router-dom";
 
 import'./app.css';
+import "./index.css";
 import Dashboard from './pages/Dashboard';
+import DashboardAdmin from './pages/DashboardAdmin/index';
+import AdminPageUsers from './pages/DashboardAdmin/users/users';
 import Teste from './pages/Teste';
 import Private from "./components/private";
 import Login from "./pages/login/login";
@@ -32,7 +35,9 @@ function App() {
                {/* <Route path="/" element={<h1> Home </h1>}></Route> */}
  
                <Route path="/login" element={<Login/>}></Route>
-    
+
+               <Route path="/dashboardAdmin" element={<DashboardAdmin/>}></Route>
+               <Route path="/dashboardAdmin/users" element={<AdminPageUsers/>}></Route>
 
                 <Route element={<Private/>}>
                     <Route path="/dashboard" element={<Dashboard/>}></Route>

@@ -3,6 +3,7 @@
 use App\Http\Controllers\CalledController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\ControllerAdmin;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TesteController;
 use Illuminate\Http\Request;
@@ -34,16 +35,29 @@ Route::middleware('auth:sanctum')->get("/userData",[UserController::class,"index
 
 
 
+// Route::prefix('admin')->middleware('is_admin')->group(function () {
+//     Route::get('/dashboard',[ControllerAdmin::class,"index"])->name('dashboard.admin');
+
+// });
+
+
+Route::prefix('admin')->group(function () {
+    Route::get('/dashboard',[ControllerAdmin::class,"index"])->name('dashboard.admin');
+
+});
+
+
 Route::post("/login", function (Request $request) {
     $credentials = $request->only(['email', 'password']);
 
     if (Auth::attempt($credentials)) {
 
         $user = Auth::user();
-        $token = $user->createToken('toke'); // Substitua 'scope1' e 'scope2' pelos escopos desejados
+        $token = $user->createToken('toke'); 
         return response()->json([
             'access_token' => $token->plainTextToken,
             'token_type' => 'Bearer',
+            'type'=>$user->type,
         ]);
    
     } 
