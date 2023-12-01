@@ -43,7 +43,8 @@ Route::middleware('auth:sanctum')->get("/userData",[UserController::class,"index
 
 Route::prefix('admin')->group(function () {
     Route::get('/dashboard',[ControllerAdmin::class,"index"])->name('dashboard.admin');
-
+    Route::post('/dashboard/update/called',[ControllerAdmin::class,"store"])->name('dashboard.admin.store');
+    
 });
 
 
