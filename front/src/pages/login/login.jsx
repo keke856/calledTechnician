@@ -35,12 +35,6 @@ export default function Login(){
        setStartLoadin(true);
 
 
-
-
-      console.log(api);
-
-
-
        api.post(
         'api/login',
          {
@@ -57,7 +51,21 @@ export default function Login(){
             console.log(response['data']['access_token'])
           
             sessionStorage.setItem('token', response['data']['access_token']);
-            navigate("/dashboard");
+
+            sessionStorage.setItem('User',response['data']['userName']);
+            sessionStorage.setItem('type',response['data']['type']);
+
+              switch(response['data']['type']){
+                case 'user':
+                    navigate("/dashboard");
+                  break;
+
+                  case 'admin':
+                     navigate("/dashboardAdmin");
+                      break;
+              }
+
+
         });
 
    }

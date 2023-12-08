@@ -4,16 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\Called;
 use App\Models\User;
+use Illuminate\Contracts\Auth\Access\Authorizable;
 use Illuminate\Http\Request;
 
 class ControllerAdmin extends Controller
 {
-    public function index(){
+    public function index(Request $request){
 
-
+    
         $usersWithCalleds = Called::with('user')->paginate(7); 
 
-         return response()->json($usersWithCalleds);
+         return response()->json($usersWithCalleds);        
     }
 
 

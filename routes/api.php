@@ -41,7 +41,7 @@ Route::middleware('auth:sanctum')->get("/userData",[UserController::class,"index
 // });
 
 
-Route::prefix('admin')->group(function () {
+Route::middleware(['auth:sanctum','access.administrador'])->prefix('admin')->group(function () {
     Route::get('/dashboard',[ControllerAdmin::class,"index"])->name('dashboard.admin');
     Route::post('/dashboard/update/called',[ControllerAdmin::class,"store"])->name('dashboard.admin.store');
     
@@ -54,11 +54,12 @@ Route::post("/login", function (Request $request) {
     if (Auth::attempt($credentials)) {
 
         $user = Auth::user();
-        $token = $user->createToken('toke'); 
+        $token = $user->createToken('toke',[$user->type]); 
         return response()->json([
             'access_token' => $token->plainTextToken,
             'token_type' => 'Bearer',
             'type'=>$user->type,
+            'userName' => $user->name
         ]);
    
     } 
@@ -66,3 +67,7 @@ Route::post("/login", function (Request $request) {
         return response()->json(['message' => 'Credenciais inválidas'], 401);
    
 });
+
+
+
+

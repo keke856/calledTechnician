@@ -36,10 +36,7 @@ export default function users() {
                    <div className="p-5 flex flex justify-between items-center mb-4" >
                       <h2 className="font-bold">Usuários</h2>
                        <div className="flex gap-2">
-                         <button className="border-red-600 text-red-600  border-2 rounded p-1"> Em Aberto</button>
-                         <button className="border-yellow-600 text-yellow-600  border-2 rounded  p-1"> Em Andamento</button>
-                         <button className="border-green-600 text-green-600  border-2 rounded  p-1"> Concluido</button>
-
+                          <button className="border-green-600 text-green-600  border-2 rounded  p-1"> Add Novo</button>
                        </div>
                      </div>
 

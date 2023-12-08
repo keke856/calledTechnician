@@ -36,14 +36,18 @@ function App() {
  
                <Route path="/login" element={<Login/>}></Route>
 
-               <Route path="/dashboardAdmin" element={<DashboardAdmin/>}></Route>
-               <Route path="/dashboardAdmin/users" element={<AdminPageUsers/>}></Route>
+             
 
-                <Route element={<Private/>}>
+                <Route element={<Private role="user"/>}>
                     <Route path="/dashboard" element={<Dashboard/>}></Route>
                     <Route path="/UserClient" element={<UserClient/>}></Route>
-                    
-                 </Route>
+                  </Route>  
+
+                  <Route element={<Private role="admin"/>}>
+                     <Route path="/dashboardAdmin" element={<DashboardAdmin/>}></Route>
+                     <Route path="/dashboardAdmin/users" element={<AdminPageUsers/>}></Route>   
+                    </Route>
+
                 <Route path="*" element={<h1>404</h1>}> </Route>
            
              

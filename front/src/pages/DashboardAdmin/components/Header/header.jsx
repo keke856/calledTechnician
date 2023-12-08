@@ -14,8 +14,8 @@ const [activeMenuUser,setActiveMenuUser] = useState(false);
                
                <div>
                     {/* <div className="w-16 bg-white rounded-full h-16" onClick={()=>setActiveMenuUser(!activeMenuUser)}> */}
-                    <div className="" onClick={()=>setActiveMenuUser(!activeMenuUser)}>
-
+                    <div className="flex gap-3" onClick={()=>setActiveMenuUser(!activeMenuUser)}>
+                         <p>Olá, {sessionStorage.getItem('User')}</p>
                         <FontAwesomeIcon icon={faUser} style={{fontSize: "1.5rem",}} />
                     </div>
 
